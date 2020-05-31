@@ -1,20 +1,21 @@
 <div ngbNav>
   <div class="navLinks">
-    <a class="btn" routerLink="/home-page" routerLinkActive="active"> Home</a>
-    <a class="btn" routerLink="/shoping-cart" routerLinkActive="active"
-      >Shopping Cart</a
-    >
-    <a class="btn" routerLink="/login-page" routerLinkActive="active">Login</a>
+    <a class="btn" routerLink="/home-page" routerLinkActive="active"> Home
+    </a>
+    <a class="btn" routerLink="/shoping-cart" routerLinkActive="active">Shopping Cart
+    </a>
+    <a *ngIf="!user" class="btn" routerLink="/login-page" routerLinkActive="active">Login
+    </a>
   </div>
-  <div ngbDropdown>
+  <div ngbDropdown *ngIf="user">
     <button class="btn" ngbDropdownToggle>
-      Username
+      {{ user.displayName }}
     </button>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
       <a ngbDropdownItem>My Orders</a>
       <a ngbDropdownItem>Manage Orders</a>
       <a ngbDropdownItem>Manage Products</a>
-      <a ngbDropdownItem>Log Out</a>
+      <a ngbDropdownItem (click)="logout()">Log Out</a>
     </div>
   </div>
 </div>

@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit {
-  constructor() {}
+export class NavBarComponent {
+  user: firebase.User;
 
-  ngOnInit() {}
+  constructor(private afAuth: AngularFireAuth) {
+    afAuth.authState.subscribe((user) => (this.user = user));
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }
