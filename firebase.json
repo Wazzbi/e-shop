@@ -1,10 +1,7 @@
 {
   "hosting": {
+    "site": "e-shop-2f95c",
     "public": "dist/eshop",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
