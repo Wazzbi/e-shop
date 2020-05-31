@@ -1,16 +1,17 @@
 <div ngbNav>
   <div class="navLinks">
-    <a class="btn" routerLink="/home-page" routerLinkActive="active"> Home
-    </a>
-    <a class="btn" routerLink="/shoping-cart" routerLinkActive="active">Shopping Cart
-    </a>
-    <a *ngIf="!user" class="btn" routerLink="/login-page" routerLinkActive="active">Login
-    </a>
+    <a class="btn" routerLink="/home" routerLinkActive="active"> Home</a>
+    <a class="btn" routerLink="/shoping-cart" routerLinkActive="active">Shopping Cart</a>
+    <ng-template #anonymousUser>
+      <a class="btn" routerLink="/login" routerLinkActive="active">Login</a>
+    </ng-template>
   </div>
-  <div ngbDropdown *ngIf="user">
+
+  <div ngbDropdown *ngIf="auth.user$ | async as user; else anonymousUser">
     <button class="btn" ngbDropdownToggle>
       {{ user.displayName }}
     </button>
+
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
       <a ngbDropdownItem>My Orders</a>
       <a ngbDropdownItem>Manage Orders</a>
