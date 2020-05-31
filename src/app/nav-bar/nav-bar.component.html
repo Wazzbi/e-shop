@@ -1,0 +1,19 @@
+<div ngbNav>
+  <div class="navLinks">
+    <a class="btn" routerLink="/home-page" routerLinkActive="active">Home</a>
+    <a class="btn" routerLink="/shoping-cart" routerLinkActive="active"
+      >Shopping Cart</a
+    >
+  </div>
+  <div ngbDropdown>
+    <button class="btn" ngbDropdownToggle>
+      Username
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem>My Orders</button>
+      <button ngbDropdownItem>Manage Orders</button>
+      <button ngbDropdownItem>Manage Products</button>
+      <button ngbDropdownItem>Log Out</button>
+    </div>
+  </div>
+</div>
