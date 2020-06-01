@@ -19,6 +19,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

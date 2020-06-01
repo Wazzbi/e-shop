@@ -12,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 
 const routes: Routes = [
   // anonymous user
-  { path: '', redirectTo: '/home-page', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'shoping-cart', component: ShopingCartComponent },
   { path: 'login', component: LoginPageComponent },
